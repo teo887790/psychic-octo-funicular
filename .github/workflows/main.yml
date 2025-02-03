@@ -24,7 +24,7 @@ jobs:
       - name: Configure Chrome Remote Desktop
         run: |
            
-           & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0AanRRrvglcaZrCbCuVpCUEOhwnrNbkDK5_tJmMRAHBmVMoihfFIR8UhwfkZt3KRxU0g1BQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME --pin="111111"
+           & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0ASVgi3Jw4UOini3_9aBqtHnx7e6qLTMq3CjgyWTcVuBIEmPYfF8N1Pa1Lst_ox6nv9U0YQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME --pin="111111"
       - name: Wait for Chrome Remote Desktop Service to start
         run: |
           Start-Sleep -Seconds 2147483
