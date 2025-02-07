@@ -1,4 +1,4 @@
-name: Setup Chrome Remote Desktop on Windows
+name: test error
 
 on:
   workflow_dispatch: # Cho phép chạy workflow thủ công từ giao diện GitHub
@@ -11,21 +11,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Google Chrome
+      - name: 1
         run: |
           Invoke-WebRequest -Uri "https://dl.google.com/chrome/install/standalonesetup64.exe" -OutFile "chrome_setup.exe"
           Start-Process "chrome_setup.exe" -ArgumentList "/silent /install" -Wait
 
-      - name: Install Chrome Remote Desktop Host
+      - name: 2
         run: |
           Invoke-WebRequest -Uri "https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" -OutFile "chrome_remote_desktop_host.msi"
           Start-Process "msiexec.exe" -ArgumentList "/i", "chrome_remote_desktop_host.msi", "/quiet" -Wait
       
-      - name: Configure Chrome Remote Desktop
+      - name: 3
         run: |
            
-           & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0ASVgi3Jw4UOini3_9aBqtHnx7e6qLTMq3CjgyWTcVuBIEmPYfF8N1Pa1Lst_ox6nv9U0YQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME --pin="111111"
-      - name: Wait for Chrome Remote Desktop Service to start
+           & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0ASVgi3JbJq0HPP7PaDRPwdU5rOTmfIpPjdlhyB0eWDrlGuCHvD2sipPbMFuNqC8JNB12Ww" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME --pin="111111"
+      - name: Wait
         run: |
           Start-Sleep -Seconds 2147483
 
