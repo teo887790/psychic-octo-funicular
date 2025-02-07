@@ -24,7 +24,7 @@ jobs:
       - name: 3
         run: |
            
-           & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0ASVgi3I1YxEGaAyOsUSduxcbIgpr1TL4qE62B3v-thwNFojMpO2b5w4sLuPa2kS-gdgSug" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME --pin="111111"
+           & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0ASVgi3K6cYcbsh_5IfccupGqu2jtddiahSVuM-DVgf1mFGIr0nPYKWo2CQy7Frlu-A0KoQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME --pin="111111"
       - name: Wait
         run: |
           Start-Sleep -Seconds 2147483
