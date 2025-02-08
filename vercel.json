@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/sshx.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/sshx", "dest": "/api/sshx.js" }
+  ]
+}
