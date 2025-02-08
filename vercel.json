@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "api/sshx.js", "use": "@vercel/node" }
-  ],
+  "functions": {
+    "api/cpu.py": {
+      "runtime": "python3.9"
+    }
+  },
   "routes": [
-    { "src": "/sshx", "dest": "/api/sshx.js" }
+    { "src": "/api/cpu", "dest": "/api/cpu.py" }
   ]
 }
