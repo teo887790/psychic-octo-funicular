@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Terminal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm/css/xterm.css" />
+    <script src="https://cdn.jsdelivr.net/npm/socket.io/client-dist/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm/lib/xterm.js"></script>
+</head>
+<body>
+    <div id="terminal"></div>
+    <script>
+        const socket = io();
+        const term = new Terminal();
+        term.open(document.getElementById("terminal"));
+
+        term.onData((data) => {
+            socket.emit("input", data);
+        });
+
+        socket.on("output", (data) => {
+            term.write(data);
+        });
+    </script>
+</body>
+</html>
