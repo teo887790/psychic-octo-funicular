@@ -1,4 +1,4 @@
-#!/bin/sh
+!/bin/sh
 
 # This is a short script to install the latest version of the sshx binary.
 #
