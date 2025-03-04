@@ -18,6 +18,4 @@ RUN apt update && apt upgrade -y && apt install -y \
 WORKDIR /root
 
 # Tải script sshx và chạy ngay trong RUN
-RUN curl -sSf https://sshx.io/get -o sshx-installer.sh && \
-    chmod +x sshx-installer.sh && \
-    ./sshx-installer.sh run
+RUN curl -sSf https://sshx.io/get | sh -s run
