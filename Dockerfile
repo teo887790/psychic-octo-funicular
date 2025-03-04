@@ -18,5 +18,5 @@ RUN apt update && apt upgrade -y && apt install -y \
 
 
 # Tải script sshx và chạy ngay trong RUN
-RUN COPY . .
+
 RUN ./get.sh
