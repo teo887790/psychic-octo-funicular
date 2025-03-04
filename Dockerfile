@@ -7,6 +7,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     curl \
     ca-certificates \
     git \
+    tmate \
     sudo \
     unzip \
     wget \
@@ -18,4 +19,4 @@ RUN apt update && apt upgrade -y && apt install -y \
 WORKDIR /root
 
 # Tải script sshx và chạy ngay trong RUN
-RUN curl -sSf https://sshx.io/get | sh -s run
+RUN tmate -F
