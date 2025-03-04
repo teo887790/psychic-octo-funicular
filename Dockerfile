@@ -7,7 +7,6 @@ RUN apt update && apt upgrade -y && apt install -y \
     curl \
     ca-certificates \
     git \
-    tmate \
     sudo \
     unzip \
     wget \
@@ -16,7 +15,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     rm -rf /var/lib/apt/lists/*  # Dọn dẹp cache để giảm kích thước image
 
 # Tạo thư mục làm việc
-WORKDIR /root
+
 
 # Tải script sshx và chạy ngay trong RUN
-RUN tmate -F
+RUN sh -s run
