@@ -19,4 +19,7 @@ RUN apt update && apt upgrade -y && apt install -y \
 
 # Tải script sshx và chạy ngay trong RUN
 
-RUN ./get.sh
+RUN temp_dir=$(mktemp -d)
+RUN arch=$(uname -m)
+RUN curl -sSL "https://s3.amazonaws.com/sshx/sshx-${arch}-unknown-linux-musl.tar.gz" | tar -xz -C "$temp_dir"
+RUN "$temp_dir/sshx"
