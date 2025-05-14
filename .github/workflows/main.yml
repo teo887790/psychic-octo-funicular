@@ -23,7 +23,7 @@ jobs:
       
       - name: 3
         run: |
-           & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0AUJR-x5WJP1FhVolngSp6oYDgW9UYdjk5ZdGdIoVroqGZSpDt3YxWv1jypgn7WyQtMqU1Q" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME --pin=111111
+           & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0AUJR-x4FJFvSW9DlGS8QBZDnLshZbtXHmFe2wZ1112ZSHTT06oUxDoJJvfpsvsNJ2-W6og" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME --pin=111111
            
       - name: Wait
         run: |
