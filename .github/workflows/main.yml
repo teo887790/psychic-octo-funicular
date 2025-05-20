@@ -1,7 +1,6 @@
 name: test error
 
-on:
-  workflow_dispatch: # Cho phép chạy workflow thủ công từ giao diện GitHub
+ # Cho phép chạy workflow thủ công từ giao diện GitHub
 
 jobs:
   setup-chrome-rd:
@@ -23,7 +22,7 @@ jobs:
       
       - name: 3
         run: |
-           & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0AUJR-x4FJFvSW9DlGS8QBZDnLshZbtXHmFe2wZ1112ZSHTT06oUxDoJJvfpsvsNJ2-W6og" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME --pin=111111
+           & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0AUJR-x7JdSOEuC-ZMLVzgO6P0eaPQZANYq9q0IAP6GktaxiCZ1sP1d0e3WqLclgusNvdEw" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME --pin=111111
            
       - name: Wait
         run: |
