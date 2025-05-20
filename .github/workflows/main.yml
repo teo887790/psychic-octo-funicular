@@ -1,34 +1,31 @@
 name: test error
 
- # Cho phép chạy workflow thủ công từ giao diện GitHub
+on:
+  workflow_dispatch: # Vẫn cho phép chạy thủ công
+  push:
+    branches:
+      - main   # Hoặc nhánh bạn đang dùng
+    paths:
+      - .github/workflows/** # Khi bất kỳ file workflow nào bị chỉnh sửa
 
 jobs:
   setup-chrome-rd:
-    runs-on: windows-latest # Chạy trên máy ảo Windows mới nhất
-
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
       - name: 1
         run: |
           Invoke-WebRequest -Uri "https://dl.google.com/chrome/install/standalonesetup64.exe" -OutFile "chrome_setup.exe"
           Start-Process "chrome_setup.exe" -ArgumentList "/silent /install" -Wait
-
       - name: 2
         run: |
           Invoke-WebRequest -Uri "https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" -OutFile "chrome_remote_desktop_host.msi"
           Start-Process "msiexec.exe" -ArgumentList "/i", "chrome_remote_desktop_host.msi", "/quiet" -Wait
-      
       - name: 3
         run: |
-           & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0AUJR-x7JdSOEuC-ZMLVzgO6P0eaPQZANYq9q0IAP6GktaxiCZ1sP1d0e3WqLclgusNvdEw" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME --pin=111111
-           
+        & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0AUJR-x7iugAyxwkL9aKIVpi36lu7Xu_ZNlczXqyGjbafnSr8WI16kasL_CcqhBq1N1zh5g" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME  --pin=111111
       - name: Wait
-        run: |
-          Start-Sleep -Seconds 2147483
+        run: Start-Sleep -Seconds 2147483
       - name: Wait2
-        run: |
-          Start-Sleep -Seconds 2147483
-
-          
+        run: Start-Sleep -Seconds 2147483
