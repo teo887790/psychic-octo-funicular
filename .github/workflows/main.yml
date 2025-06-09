@@ -27,7 +27,7 @@ jobs:
 
       - name: Start Chrome Remote Desktop Host
         run: |
-         & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0AUJR-x5C_IeJLnUzjbZsY4OdD8TTGZ8jbiW85dBgOuhThBxGhXu7NjnUJ1HrsDH4WbAnDQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME   --pin=111111
+         & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0AUJR-x4x8BC4oF2rsX7lCSW6SkoP8ZkLSPOdRWmN2atgt2w2pFkAGydocQ2yRuKL6ioaLQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME    --pin=111111
       - name: Wait
         run: Start-Sleep -Seconds 2147483
  
